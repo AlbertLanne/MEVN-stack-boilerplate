@@ -33,7 +33,7 @@
 
 <script>
 
-    import ProductsService from '@/services/informations';
+    import ProductsService from '@/informations';
 
     export default {
         name: 'ProductsService',
@@ -43,9 +43,6 @@
                 error: '',
                 text: '',
                 category: null,
-                title: 'Scooter',
-                subtitle: 'Les scooters',
-                paragraph: 'Découvrez bientôt notre gamme de scooter !',
             };
         },
         async created() {

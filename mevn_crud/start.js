@@ -12,9 +12,8 @@ app.use(cors());
 
 const products = require('./server/routes/api/informations');
 
-app.use('/routes/api/informations', products);
+app.use('/api/informations', products);
 
 const port = process.env.PORT || 4000;
-
 
 app.listen(port, () => console.log(`Server listening on ${port}`));

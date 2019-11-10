@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-
+// API SERVER HTTP AXIOS HERE
 const app = express();
 
 // MIDDLEWARE
@@ -19,3 +19,5 @@ app.use('/api/products', products);
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Server listening on ${port}`));
+
+

@@ -6,7 +6,7 @@
             <div class="d-flex flex-wrap">
                 <div class="col-12">
 
-                    <p class="error" v-if="error">  {{error}}</p>
+                    <p class="error" v-if="error"> {{error}}</p>
                     <div class="posts-container">
                         <div class="post"
                              v-for="(product, index) in products"
@@ -15,8 +15,10 @@
                              v-bind:key="product._id"
                              v-on:dblclick="deleteProducts(product._id)"
                         >
+                            <button  v-on:click="deleteProducts(product._id.this)">
+                            delete!
                             <p>{{product.text}} {{product.title}}</p>
-
+                            </button>
                         </div>
                     </div>
 
@@ -24,6 +26,9 @@
                         <label for="create-post">Something...</label>
                         <input type="text" id="create-post" v-model="text" placeholder="Create a post">
                         <button v-on:click="createProducts">Post!</button>
+                    </div>
+                    <div class="delete-post">
+                        <button  v-on:click="deleteProducts(product._id)"">delete!</button>
                     </div>
                 </div>
             </div>
@@ -34,6 +39,8 @@
 <script>
 
     import ProductsService from '@/informations';
+
+    // import ProductsService from '../../start';
 
     export default {
         name: 'ProductsService',

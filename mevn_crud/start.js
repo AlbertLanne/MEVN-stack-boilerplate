@@ -12,7 +12,9 @@ app.use(cors());
 
 const products = require('./server/routes/api/informations');
 
-app.use('/api/informations', products);
+
+// Le lien avec le serveur d'api   ==>  http://localhost:4000/api/products
+app.use('/api/products', products);
 
 const port = process.env.PORT || 4000;
 

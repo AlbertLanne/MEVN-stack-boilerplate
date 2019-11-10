@@ -6,7 +6,7 @@
             <div class="d-flex flex-wrap">
                 <div class="col-12">
 
-                    <p class="error" v-if="error"> {{error}}</p>
+                    <p class="error" v-if="error">  {{error}}</p>
                     <div class="posts-container">
                         <div class="post"
                              v-for="(product, index) in products"

@@ -1,7 +1,5 @@
 <template>
     <main role="main" class="product">
-        <BannerGeneric :title="title"/>
-        <ContentGeneric :subtitle="subtitle" :paragraph="paragraph"/>
         <section class="product-list 00 container-xl px-3 pt-8 pb-10">
             <div class="d-flex flex-wrap">
                 <div class="col-12">
@@ -27,9 +25,7 @@
                         <input type="text" id="create-post" v-model="text" placeholder="Create a post">
                         <button v-on:click="createProducts">Post!</button>
                     </div>
-                    <div class="delete-post">
-                        <button  v-on:click="deleteProducts(product._id)"">delete!</button>
-                    </div>
+
                 </div>
             </div>
         </section>

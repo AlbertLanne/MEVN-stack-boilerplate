@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 // delete post
 router.delete('/:id', async (req, res) => {
     const products = await loadProductsCollection();
-    await products.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
+    await products.deleteOne({_id: new mongodb.ObjectID(req.params.id)});
     res.status(200).send();
 });
 
@@ -37,4 +37,5 @@ async function loadProductsCollection() {
 
     return client.db('heroku_qpw8l5w0').collection('products');
 }
+
 module.exports = router;

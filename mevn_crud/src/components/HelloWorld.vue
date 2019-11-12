@@ -11,12 +11,13 @@
                              v-bind:item="product"
                              v-bind:index="index"
                              v-bind:key="product._id"
-                             v-on:dblclick="deleteProducts(product._id)"
-                        >
-                            <button  v-on:click="deleteProducts(product._id.this)">
-                            delete!
-                            <p>{{product.text}} {{product.title}}</p>
+                             v-on:dblclick="removeProducts(product._id)">
+
+                            <button>
+                                <h1>{{product.text}}</h1>
+                                <p> {{product.createdAt}}</p>
                             </button>
+
                         </div>
                     </div>
 
@@ -51,7 +52,7 @@
         async created() {
             try {
                 this.products = await ProductsService.getProducts();
-            } catch (err) {
+            } catch (err) {Z
                 this.error = err.message;
             }
         },
@@ -61,7 +62,7 @@
                 await ProductsService.insertProducts(this.text);
                 this.products = await ProductsService.getProducts();
             },
-            async deleteProducts(id) {
+            async removeProducts(id) {
                 await ProductsService.deleteProducts(id);
                 this.products = await ProductsService.getProducts();
             },

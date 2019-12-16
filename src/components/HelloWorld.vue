@@ -52,7 +52,7 @@
         async created() {
             try {
                 this.products = await ProductsService.getProducts();
-            } catch (err) {Z
+            } catch (err) {
                 this.error = err.message;
             }
         },
